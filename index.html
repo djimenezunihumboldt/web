@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pjwxtwLcoApJ+VJX8zY3V1qLdQNmL6+VQezepYP4orI+H5wX/m0dEJ+VSA9y/XIVMtS/Yx8l7xJFkW5JZHQFnA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css?v=1.4">
+    <link rel="stylesheet" href="beneficios-icons.css?v=1.0">
+    <link rel="stylesheet" href="careers-mockup.css?v=1.0">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="top-header text-white" style="background-color: #0d3d56;">
+            <div class="container d-flex justify-content-start align-items-center py-2">
+                <div>
+                    <span class="mr-4"><i class="fas fa-phone-alt"></i> 123 456 789</span>
+                    <span><i class="fas fa-envelope"></i> info@email.com</span>
+                </div>
+                <div class="ml-auto">
+                    <a href="#" class="text-white mr-3"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark" id="main-navbar">
+             <div class="container">
+                <a class="navbar-brand text-white" href="#">
+                     <img src="imagenes/LOGO.png" alt="Universidad Logo" height="60" width="120" class="mr-2">
+                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-us">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#courses">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#team">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact-us">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="d-flex align-items-center justify-content-start text-white hero-section">
+        <div class="overlay"></div>
+        <div class="hero-media-container">
+            <video id="hero-video" class="hero-video" src="Videos/hero-video.mp4" autoplay muted playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+            <img id="hero-image" class="hero-image" src="imagenes/IMAGEN HERO.jpg" style="width:100%;height:100%;object-fit:cover;display:none;position:absolute;top:0;left:0;" alt="Hero Background">
+        </div>
+        <div class="container-fluid px-0 hero-content" style="position:relative;z-index:2;">
+            <div class="row">
+                <div class="col-md-6 px-0 text-left">
+                    <p class="lead">Welcome a the University</p>
+                    <div class="lead-underline mb-2"></div>
+                    <h1>We are an online<br>platform to make learning</h1>
+                    <button class="btn btn-warning rounded-pill px-4 mt-3 text-white" style="background-color: #ffc107; border-color: #ffc107;">Get Now</button>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <div class="register-form p-4 bg-white rounded shadow w-75">
+                        <h4 class="form-header text-center">Register Now !</h4>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-light" placeholder="Name">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control bg-light" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control bg-light" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-light" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control bg-light" rows="3" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-group text-left">
+                                <button type="submit" class="btn btn-warning rounded-pill px-4 text-white">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="most-popular" class="py-5 bg-light">
+        <div class="container">
+            <div class="mb-5">
+                <h2 class="section-title"><span class="bullet"></span> The most popular</h2>
+                <div class="section-underline"></div>
+                <h3 class="section-subtitle">know what we offer you</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <img src="imagenes/IMAGE CURSO 1.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-stripes">
+                            <span class="stripe-footer"></span>
+                            <span class="stripe-gold"></span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Design for the web with adobe photoshop</h5>
+                            <a href="#" class="btn btn-warning rounded-pill px-4 text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <img src="imagenes/IMAGE CURSO 2.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-stripes">
+                            <span class="stripe-footer"></span>
+                            <span class="stripe-gold"></span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Design for the web with adobe photoshop</h5>
+                            <a href="#" class="btn btn-warning rounded-pill px-4 py-2 text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <img src="imagenes/IMAGE CURSO 3.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-stripes">
+                            <span class="stripe-footer"></span>
+                            <span class="stripe-gold"></span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Design for the web with adobe photoshop</h5>
+                            <a href="#" class="btn btn-warning rounded-pill px-4 py-2 text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <img src="imagenes/IMAGE CURSO 4.jpg" class="card-img-top" alt="Course Image">
+                        <div class="card-stripes">
+                            <span class="stripe-footer"></span>
+                            <span class="stripe-gold"></span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Design for the web with adobe photoshop</h5>
+                            <a href="#" class="btn btn-warning rounded-pill px-4 py-2 text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-warning text-warning bg-white rounded-pill px-5 py-3">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us" class="py-5" style="background-color: #0d3d56; color: white;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title"><span class="bullet"></span> About Us</h2>
+                    <div class="section-underline"></div>
+                    <h3 class="section-subtitle">Know everything we do for you</h3>
+                    <p>The university is a physical place, buildings, laboratories, libraries ... where students and teachers meet. The university is also a human-social system, that is, a set of elements that are related and interact with each other.</p>
+                    <button class="btn btn-warning mt-3">Read More</button>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="about-image-wrapper">
+                        <img src="imagenes/IMAGE ABOUT US.jpg" class="img-fluid rounded" alt="About Us">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="py-5" style="background-image: url('imagenes/BACKGROUND BENEFITS.jpg'); background-size: cover; background-position: center;">
+        <div class="beneficios-overlay"></div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="circle-icon mb-3">
+                        <img src="imagenes/ICONO 1.png" alt="Excellent Content">
+                    </div>
+                    <h4>Excellent<br>Content</h4>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="circle-icon mb-3">
+                        <img src="imagenes/ICONO 2.png" alt="Experts Instructors">
+                    </div>
+                    <h4>Experts<br>Instructors</h4>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="circle-icon mb-3">
+                        <img src="imagenes/ICONO 3.png" alt="The Best Professionals">
+                    </div>
+                    <h4>The Best<br>Professionals</h4>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="circle-icon mb-3">
+                        <img src="imagenes/ICONO 4.png" alt="Countless Courses">
+                    </div>
+                    <h4>Countless<br>Courses</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="study-careers" class="py-5 bg-light">
+        <div class="container">
+            <div class="mb-5">
+                <h2 class="section-title" style="color:#0d3d56;"><span class="bullet"></span> Study careers</h2>
+                <div class="section-underline"></div>
+                <h3 class="section-subtitle" style="color:#0d3d56;font-weight:bold;">Explore the different careers we offer</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="career-card career-bg-admin career-vertical">
+                        <div class="career-overlay"></div>
+                        <div class="career-content w-100">
+                            <div class="career-title">Administration</div>
+                            <button class="career-btn">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="career-card career-bg-accounting career-vertical">
+                        <div class="career-overlay"></div>
+                        <div class="career-content w-100">
+                            <div class="career-title">Accounting</div>
+                            <button class="career-btn">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="career-card career-bg-math career-horizontal">
+                                <div class="career-overlay"></div>
+                                <div class="career-content w-100">
+                                    <div class="career-title">Mathematics</div>
+                                    <button class="career-btn">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="career-card career-bg-programming career-horizontal">
+                                <div class="career-overlay"></div>
+                                <div class="career-content w-100">
+                                    <div class="career-title">Programming</div>
+                                    <button class="career-btn">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mb-4">
+                    <div class="career-card career-bg-architecture career-horizontal">
+                        <div class="career-overlay"></div>
+                        <div class="career-content w-100">
+                            <div class="career-title">Architecture</div>
+                            <button class="career-btn">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="career-card career-bg-biology career-horizontal">
+                        <div class="career-overlay"></div>
+                        <div class="career-content w-100">
+                            <div class="career-title">Biology</div>
+                            <button class="career-btn">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-warning text-warning bg-white rounded-pill px-5 py-3">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-5 bg-light">
+        <div class="container">
+            <div class="mb-5">
+                <h2 class="section-title"><span class="bullet"></span> Our Team</h2>
+                <div class="section-underline"></div>
+                <h3 class="section-subtitle">Meet the best professionals</h3>
+            </div>
+            <div id="teamCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 col-md-6 mb-4 team-card-wrapper">
+                                <div class="card h-100 text-center team-card">
+                                    <div class="team-card-bg" style="background-image: url('imagenes/IMAGE BACKGROUND CARD TEAM  (1).jpg');"></div>
+                                    <img src="imagenes/IMAGE TEAM 1.jpg" class="team-avatar mx-auto" alt="Jhon Smith">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jhon Smith</h5>
+                                        <p class="card-text">Math Teacher</p>
+                                        <a href="#" class="btn btn-outline-warning text-warning bg-white">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-4 team-card-wrapper">
+                                <div class="card h-100 text-center team-card">
+                                    <div class="team-card-bg" style="background-image: url('imagenes/IMAGE BACKGROUND CARD TEAM  (2).jpg');"></div>
+                                    <img src="imagenes/IMAGE TEAM 2.jpg" class="team-avatar mx-auto" alt="Dave Morgan">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dave Morgan</h5>
+                                        <p class="card-text">Math Teacher</p>
+                                        <a href="#" class="btn btn-outline-warning text-warning bg-white">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-4 team-card-wrapper">
+                                <div class="card h-100 text-center team-card">
+                                    <div class="team-card-bg" style="background-image: url('imagenes/IMAGE BACKGROUND CARD TEAM  (3).jpg');"></div>
+                                    <img src="imagenes/IMAGE TEAM 4.jpg" class="team-avatar mx-auto" alt="Zara Smith">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Zara Smith</h5>
+                                        <p class="card-text">Biology Teacher</p>
+                                        <a href="#" class="btn btn-outline-warning text-warning bg-white">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-4 team-card-wrapper">
+                                <div class="card h-100 text-center team-card">
+                                    <div class="team-card-bg" style="background-image: url('imagenes/IMAGE BACKGROUND CARD TEAM  (3).jpg');"></div>
+                                    <img src="imagenes/IMAGE TEAM 3.jpg" class="team-avatar mx-auto" alt="Jimena Soto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jimena Soto</h5>
+                                        <p class="card-text">Math Teacher</p>
+                                        <a href="#" class="btn btn-outline-warning text-warning bg-white">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#teamCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#teamCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-warning text-white border-white rounded-pill px-5 py-3">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card text-white text-center review-card" style="background-image: url('imagenes/BACKGROUND REVIEWS.jpg');">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h2 class="card-title mb-4">FOR US IT IS VERY IMPORTANT TO KNOW THE OPINIONS OF OUR CLIENTS</h2>
+                            <button class="btn btn-warning play-review-video" style="background-color: #ffc107; border-color: #ffc107; color: white;">Ver Opinión en Video</button>
+                            <div class="review-video-container" style="display:none;">
+                                <video id="review-video" width="560" height="315" controls>
+                                    <source src="Videos/review-1.mp4" type="video/mp4">
+                                    Tu navegador no soporta el video.
+                                </video>
+                            </div>
+                            <div class="mt-4">
+                                <button class="btn btn-outline-warning text-warning bg-white rounded-pill px-5 py-3 review-name-button">JEFF FRESHMAN</button>
+                            </div>
+                            <div class="dots mt-3">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-white" style="background-color: #0d3d56;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="imagenes/LOGO.png" alt="Universidad Logo" height="60" width="120" class="mb-3">
+                    <p class="footer-description">We are an online platform to make learning easily and accessible to everyone.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#about-us" class="text-white">About Us</a></li>
+                        <li><a href="#courses" class="text-white">Courses</a></li>
+                        <li><a href="#team" class="text-white">Our Team</a></li>
+                        <li><a href="#contact-us" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li><i class="fas fa-phone-alt"></i> +123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> info@university.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                    </ul>
+                    <div class="footer-social mt-3">
+                        <a href="#" class="text-white mr-3"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title">Newsletter</h5>
+                    <p>Subscribe to our newsletter</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-warning" type="button" id="button-addon2">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center pt-4 border-top border-secondary d-flex justify-content-between align-items-center">
+                    <p class="mb-0">© 2025 University Page. All rights reserved.</p>
+                    <a href="https://striveenterprise.com/" target="_blank" rel="noopener">
+                        <img src="imagenes/logo Silvera Enterprises.png" alt="Logo Silvera Enterprises" style="height:60px; margin-left:auto;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5u9Q2QWj" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

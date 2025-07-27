@@ -1,0 +1,239 @@
+/* Tarjetas verticales: solo Administration y Accounting */
+.career-vertical {
+    height: 480px !important;
+    max-width: 320px !important;
+    min-width: 220px;
+    width: 100%;
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tarjetas horizontales: las demás carreras */
+.career-horizontal {
+    height: 140px !important;
+    max-width: 420px !important;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Tarjeta de Architecture un poco más alta */
+.career-bg-architecture.career-horizontal {
+    height: 140px !important;
+    max-width: calc(100% - 20px) !important; /* Extiende el ancho máximo unas milésimas más */
+    margin-right: auto !important; /* Ajusta el margen derecho */
+}
+/* Imágenes de fondo para cada tarjeta de carrera */
+.career-card {
+    position: relative;
+    /* El tamaño y margen se controlan con career-vertical/horizontal */
+    height: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 24px 0;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.career-bg-admin {
+    background-image: url('imagenes/IMAGE  CATEGORY ADMINISTRATION.jpg') !important;
+}
+.career-bg-accounting {
+    background-image: url('imagenes/IMAGE  CATEGORY ACCOUNTING.jpg') !important;
+}
+.career-bg-math {
+    background-image: url('imagenes/IMAGE  CATEGORY MATHEMATICS.jpg') !important;
+}
+.career-bg-programming {
+    background-image: url('imagenes/IMAGE  CATEGORY PROGRAMMING.jpg') !important;
+}
+.career-bg-architecture {
+    background-image: url('imagenes/IMAGE  CATEGORY ARCHITECTURE.jpg') !important;
+}
+.career-bg-math {
+    background-image: url('imagenes/IMAGE  CATEGORY MATHEMATICS.jpg') !important;
+}
+.career-bg-programming {
+    background-image: url('imagenes/IMAGE  CATEGORY PROGRAMMING.jpg') !important;
+}
+.career-bg-architecture {
+    background-image: url('imagenes/IMAGE  CATEGORY ARCHITECTURE.jpg') !important;
+}
+.career-bg-biology {
+    background-image: url('imagenes/IMAGE  CATEGORY BIOLOGY.jpg') !important;
+}
+
+/* Superposición azul semitransparente */
+.career-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 61, 86, 0.55);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.career-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0 0 0;
+}
+.career-bg-admin .career-content, .career-bg-accounting .career-content {
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding: 0 0 0 32px !important;
+}
+.career-title {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 22px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.career-bg-admin .career-title, .career-bg-accounting .career-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+}
+.career-btn {
+    background: #ffc107;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 38px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+.career-btn:hover {
+    background: #e0a800;
+}
+.career-bg-admin .career-btn, .career-bg-accounting .career-btn {
+    padding: 8px 28px !important;
+    font-size: 1rem !important;
+    margin-top: 0 !important;
+}
+/* Estilos para las tarjetas de carreras tipo mockup */
+.career-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 220px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #222;
+}
+.career-card .career-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+  z-index: 1;
+}
+.career-card .career-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 32px 32px 24px 32px;
+}
+.career-card .career-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.career-card .career-btn {
+  background: #ffc107;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 24px;
+  padding: 8px 32px;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+
+
+@media (max-width: 767px) {
+  .career-card .career-content {
+    padding: 20px 16px 16px 16px;
+  }
+  .career-card .career-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Estilo para el título Our Team */
+.our-team-title {
+    color: #0d3d56 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: left;
+    display: inline-block;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    padding-left: 32px;
+}
+
+.our-team-subtitle {
+    color: #0d3d56 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: left;
+    display: block;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    padding-left: 32px;
+}
+
+/* Estilos específicos para la sección Our Team */
+#team .section-title {
+    color: #0d3d56 !important; /* Color del footer */
+    font-weight: normal;
+}
+#team .section-underline {
+    width: 48px;
+    height: 4px;
+    background: #ffc107;
+    border-radius: 2px;
+    margin: 8px 0 16px 0;
+}
+#team .section-subtitle {
+    color: #0d3d56 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem !important; /* Tamaño aumentado */
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: left;
+}

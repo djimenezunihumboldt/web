@@ -1,0 +1,757 @@
+/* Efecto zoom Bootstrap para imágenes de Study careers */
+/* Efecto hover para todos los botones */
+button, .btn, .btn-warning, .btn-outline-warning {
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, border 0.3s;
+}
+button:hover, .btn:hover, .btn-warning:hover {
+    background-color: #ffdb70 !important;
+    color: #0d3d56 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-color: #ffdb70 !important;
+}
+.btn-outline-warning:hover {
+    background-color: #ffc107 !important;
+    color: #fff !important;
+    border-color: #ffc107 !important;
+}
+/* HERO video/image cycle */
+.hero-section {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+}
+.hero-media-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.hero-video, .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+body {
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+/* Header Styling */
+#main-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.top-header {
+    background-color: white; /* Initial background */
+    color: #0d3d56; /* Initial text color */
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+#main-navbar {
+    background-color: transparent !important; /* Transparente al inicio para mostrar hero */
+    transition: background-color 0.3s ease;
+}
+
+#main-navbar .navbar-nav .nav-link {
+    color: white !important; /* Initial white text for nav links */
+    transition: color 0.3s ease;
+}
+
+/* Header scrolled state */
+#main-header.scrolled .top-header {
+    background-color: white;
+    color: #0d3d56;
+}
+
+#main-header.scrolled #main-navbar {
+    background-color: #0d3d56 !important; /* Blue background when scrolled */
+}
+
+#main-header.scrolled #main-navbar .navbar-nav .nav-link {
+    color: white !important; /* White text when scrolled */
+}
+
+#main-navbar .navbar-nav .nav-link:hover {
+    color: #ffc107 !important; /* Hover effect for menu options */
+}
+
+/* Bullet point styling */
+.bullet {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ffc107; /* Yellow color */
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    color: white;
+    /* Mostrar imagen de fondo completa sin recortar */
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+
+#hero .lead {
+    display: block;
+    position: relative;
+    width: 100%; /* Extiende completamente el título */
+    margin: 5rem 0 0.5rem 0; /* Empujar hero text un poquito más hacia abajo */
+    padding-bottom: 1.5rem; /* Más separación entre texto y subrayado */
+    margin-left: 0; /* Alinear de forma natural con el contenedor */
+    letter-spacing: normal; /* Espaciado normal entre caracteres */
+}
+
+#hero .lead::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%; /* Reducido ancho un 60% */
+    height: 3px; /* Reducido grosor */
+    background-color: #ffc107;
+}
+
+#hero .lead-underline {
+    display: none;
+}
+
+/* Overlay semi-transparente sobre hero */
+#beneficios h4 {
+    color: #0d3d56;
+    text-shadow: 1px 1px 6px rgba(255,255,255,0.7);
+    font-weight: bold;
+}
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 61, 86, 0.5); /* Color footer semitransparente */
+    z-index: 0;
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 80px; /* Bajar títulos, subrayado y botón más abajo */
+    max-width: 80%; /* Ajuste ancho del contenedor hero */
+    margin-left: 10%; /* Ajuste adicional para mover un poco más a la derecha */
+}
+
+.hero-content h1 {
+    /* default full width title */
+    font-size: 2.5em; /* Reducir tamaño del título principal */
+    font-weight: bold;
+    margin-top: 2.5rem; /* Mayor separación entre línea dorada y título */
+    display: block;
+    width: 100%; /* Llenar ancho de columna */
+    margin-left: 0; /* Alinear de forma natural dentro del contenedor */
+}
+
+.hero-content p.lead {
+    font-size: 1.5em;
+    color: white; /* Texto blanco en hero */
+}
+
+.register-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px 20px 10px 10px !important; /* Top corners match header rounding */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Clip header corners */
+}
+
+.register-form h4 {
+    color: #0d3d56;
+}
+
+/* Header dentro de register-form con fondo color footer y línea dorada */
+.register-form .form-header {
+    background-color: #0d3d56;
+    color: white;
+    padding: 1rem 0;
+    margin: -30px -30px 20px;
+    border-bottom: 4px solid #ffc107;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Campos del formulario con forma de cápsula */
+.register-form .form-control {
+    border-radius: 50px !important;
+}
+
+.register-form textarea.form-control {
+    border-radius: 1rem !important; /* Más curvas en las esquinas del campo Message */
+}
+
+.hero-content .btn-warning {
+    margin-top: 1rem; /* Bajar botón un poco más */
+}
+
+/* General button hover effect */
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #0d3d56;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    border-color: #e0a800;
+    color: #0d3d56;
+}
+
+/* The Most Popular Section */
+#most-popular .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#most-popular .card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+#most-popular .card-title {
+    color: #0d3d56 !important; /* Footer color for course titles */
+}
+
+/* Stripes below image in Most Popular cards */
+.card-stripes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* no white space */
+}
+
+.card-stripes .stripe-footer,
+.card-stripes .stripe-gold {
+    width: 100%;
+    height: 4px;
+    display: block;
+}
+
+.card-stripes .stripe-footer {
+    background-color: #0d3d56;
+}
+
+.card-stripes .stripe-gold {
+    background-color: #ffc107;
+}
+
+/* Badge para nuevos cursos */
+.badge-new {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #ffc107;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    z-index: 1;
+}
+
+/* Forzar texto blanco en botones de Most Popular */
+#most-popular .btn-warning {
+    color: white !important;
+}
+
+/* About Us Section */
+/* Titles en sección 'Most Popular' */
+#most-popular .section-title {
+    text-align: left;
+    color: #0d3d56;
+    font-size: 2rem;
+    font-weight: normal; /* Texto normal para 'The most popular' */
+    margin-bottom: 0;
+}
+
+#most-popular .section-underline {
+    width: 300px; /* Línea aún más larga */
+    height: 4px;
+    background-color: #ffc107;
+    margin-top: 0.5rem;
+    margin-left: 25px; /* Ajustado para alineación más precisa bajo la letra T */
+    margin-bottom: 1rem;
+}
+
+#most-popular .section-subtitle {
+    text-align: left;
+    color: #0d3d56;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: 600; /* Negrita para 'know what we offer you' */
+    margin-left: 25px; /* Alinear con la primera letra de 'The' */
+}
+
+#about-us img {
+    border: 5px solid #ffc107; /* Yellow border for the image */
+    border-radius: 10px;
+}
+/* Underline para título About Us */
+.section-underline {
+    width: 200px; /* Ajustar longitud al texto */
+    height: 4px;
+    background-color: #ffc107;
+    margin: 0.5rem 0 1rem 0;
+}
+/* Underline para subtítulo en About Us */
+.section-subtitle-underline {
+    width: 180px; /* Ajustar longitud al texto */
+    height: 2px;
+    background-color: #ffffff;
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* Wrapper dorado rotado detrás de la imagen en About Us */
+#about-us .about-image-wrapper {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 15px; /* esquinas redondeadas */
+    /* overflow hidden removido */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#about-us .about-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 44px; /* bajar más el marco dorado */
+    left: 28px; /* ocultar más el lado izquierdo */
+    width: calc(100% - 76px); /* reducir un poco más el lado derecho */
+    height: calc(100% - 40px); /* estirado un poco más la parte baja */
+    background: transparent;
+    border: 4px solid #ffc107;
+    transform: rotate(5deg); /* inclinar más la punta derecha hacia abajo */
+    /* redondear esquinas del marco dorado */
+    border-radius: 15px; /* redondear esquinas del marco dorado */
+    z-index: 0;
+}
+
+#about-us .about-image-wrapper img {
+    position: relative;
+    top: -10px; /* subir imagen */
+    z-index: 1;
+    display: block;
+    width: 90%;
+    margin: 0 auto; /* centrar imagen reducida */
+    height: auto;
+    border-radius: 15px; /* esquinas más curvas */
+    border: 1px solid #ffffff; /* borde blanco delgado */
+}
+
+/* Beneficios Section */
+#beneficios .circle-icon {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 3em;
+    color: #0d3d56;
+}
+
+/* Study Careers Section */
+#study-careers .career-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    cursor: pointer;
+}
+
+#study-careers .career-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* Team Section */
+.team-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+}
+ .team-card {
+  position: relative;
+  border: none;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.team-card-bg {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  margin-top: -50px;
+}
+.team-card .card-body {
+  padding-top: 0.5rem;
+}
+.team-card .card-title {
+  color: #0d3d56;
+  margin-top: 0.5rem;
+}
+.team-card .card-text {
+  color: #fcb819;
+  margin-bottom: 0.75rem;
+}
+.team-card .btn {
+  border: 1px solid #fcb819;
+  color: #fcb819;
+  background: transparent;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+/* Reviews Section */
+#reviews .review-card {
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Asegurar posicionamiento del overlay */
+}
+
+#reviews .review-card::before { /* Overlay semi-transparente */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 61, 86, 0.55); /* Color del footer con transparencia */
+    border-radius: 20px; /* Coincide con el radio de la tarjeta */
+}
+
+#reviews .card-img-overlay {
+    position: relative; /* Para que el contenido esté sobre el overlay */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px; /* Aumentar padding para mejor espaciado */
+}
+
+#reviews .card-title {
+    font-family: 'Montserrat', sans-serif; /* Asumiendo esta fuente */
+    font-size: 2.2em; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin-bottom: 25px; /* Espacio debajo del título */
+    line-height: 1.3;
+}
+
+#reviews .play-button {
+    font-size: 3.5em; /* Icono de play más grande */
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: white;
+    border-radius: 50%;
+    width: 90px; /* Botón de play más grande */
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para el botón de play */
+    transition: transform 0.2s ease-in-out;
+}
+
+#reviews .play-button:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+#reviews .video-placeholder iframe {
+    width: 100%;
+    height: 315px; /* Ajustar altura del video */
+    border-radius: 15px; /* Bordes redondeados para el video */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#reviews .review-name-button {
+    background-color: #fff !important; /* Fondo blanco */
+    color: #0d3d56 !important; /* Texto color del footer */
+    border: 2px solid #ffc107 !important; /* Borde dorado */
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 12px 40px; /* Más padding */
+    border-radius: 30px; /* Más redondeado */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#reviews .review-name-button:hover {
+    background-color: #ffc107 !important;
+    color: white !important;
+    border-color: #ffc107 !important;
+}
+
+.dots {
+    margin-top: 30px; /* Más espacio sobre los puntos */
+}
+
+.dots .dot {
+    display: inline-block;
+    width: 12px; /* Puntos más grandes */
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4); /* Color transparente */
+    border-radius: 50%;
+    margin: 0 6px; /* Más espacio entre puntos */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dots .dot.active {
+    background-color: #ffc107; /* Color dorado para el punto activo */
+    transform: scale(1.2); /* Ligeramente más grande el activo */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #0d3d56; /* Color azul oscuro */
+    color: white;
+    font-family: Arial, sans-serif; /* Consistencia con el resto de la página */
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+footer .footer-description {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+footer .footer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 25px; /* Más espacio debajo del título */
+    position: relative;
+}
+
+footer .footer-title::after { /* Underline para títulos del footer */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px; /* Posición del underline */
+    width: 50px; /* Ancho del underline */
+    height: 3px;
+    background-color: #ffc107;
+    border-radius: 2px;
+}
+
+footer ul {
+    padding-left: 0;
+    list-style: none; /* Remover viñetas */
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+footer ul li a:hover {
+    color: #ffc107 !important; /* Efecto hover dorado */
+}
+
+footer .footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+footer .footer-contact li i {
+    margin-right: 12px;
+    font-size: 1.1em;
+    color: #ffc107; /* Iconos dorados */
+    margin-top: 3px; /* Alineación vertical del icono con el texto */
+}
+
+footer .footer-social a {
+    font-size: 1.5em; /* Iconos más grandes */
+    color: white;
+    margin-right: 18px; /* Espacio entre iconos */
+    transition: color 0.2s ease-in-out;
+}
+
+footer .footer-social a:hover {
+    color: #ffc107; /* Hover dorado */
+}
+
+footer .form-control {
+    border-radius: 25px; /* Bordes redondeados para input */
+    border: none;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
+    color: white;
+}
+
+footer .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Color del placeholder */
+}
+
+footer .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: none;
+    color: white;
+}
+
+footer .input-group-append .btn-warning {
+    border-top-right-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    color: white !important; /* Forzar color de texto blanco */
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+footer .input-group-append .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+footer .border-top {
+    border-color: rgba(255, 255, 255, 0.1) !important; /* Línea de copyright más tenue */
+}
+
+footer .col-12 text-center {
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-content .col-md-6 {
+        text-align: center !important; /* Center text in mobile view */
+    }
+
+    #about-us .col-md-6:first-child {
+        order: 2; /* Text after image in mobile for About Us */
+    }
+
+    #about-us .col-md-6:last-child {
+        order: 1; /* Image first in mobile for About Us */
+    }
+
+    #about-us .btn {
+        margin-top: 20px; /* Add margin to button */
+    }
+
+    #beneficios .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #study-careers .career-card {
+        height: auto !important; /* All cards same size in mobile */
+    }
+
+    #teamCarousel .carousel-item .row > div {
+        display: flex;
+        justify-content: center;
+    }
+
+    #teamCarousel .carousel-item .col-lg-3,
+    #teamCarousel .carousel-item .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Reviews section adjustments */
+    #reviews .card-img-overlay {
+        padding: 20px;
+    }
+
+    #reviews .card-title {
+        font-size: 1.5em;
+    }
+
+    #reviews .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 2em;
+    }
+
+    /* Footer Responsive */
+    footer .footer-title {
+        text-align: center;
+    }
+
+    footer .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    footer ul {
+        text-align: center;
+    }
+
+    footer .footer-contact li {
+        justify-content: center;
+        text-align: left;
+    }
+
+    footer .footer-social {
+        text-align: center;
+    }
+
+    footer .input-group {
+        width: 90%;
+        margin: auto;
+    }
+}
