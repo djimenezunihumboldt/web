@@ -1,60 +1,67 @@
 $(document).ready(function() {
-    // Header scroll effect
+    // Header scroll effect - cambia color del top-header y navbar
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 50) { // Adjust scroll threshold as needed
+        if ($(this).scrollTop() > 50) {
             $('#main-header').addClass('scrolled');
+            $('.top-header').addClass('scrolled');
         } else {
             $('#main-header').removeClass('scrolled');
+            $('.top-header').removeClass('scrolled');
         }
     });
 
-    // Smooth scrolling for navigation links
-    $('a.nav-link[href^="#"]').on('click', function(event) {
+    // Smooth scrolling for ALL anchor links (header, footer, etc.)
+    $('a[href^="#"]').on('click', function(event) {
         var target = $(this.hash);
         if (target.length) {
             event.preventDefault();
+            var headerHeight = $('#main-header').outerHeight() || 120;
             $('html, body').animate({
-                scrollTop: target.offset().top - $('#main-navbar').outerHeight() // Adjust for fixed header
-            }, 1000);
+                scrollTop: target.offset().top - headerHeight
+            }, 800);
+            // Cerrar menú móvil después de hacer click
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('.navbar-collapse').removeClass('show');
+            }
         }
     });
 
-    // Play video in Reviews section
-    $('.play-button').on('click', function() {
-        var videoContainer = $(this).siblings('.video-placeholder');
-        var videoIframe = videoContainer.find('iframe');
-        // IMPORTANTE: Reemplaza 'dQw4w9WgXcQ' con el ID real de tu video de YouTube.
-        // Puedes encontrar el ID en la URL del video de YouTube, por ejemplo:
-        // https://www.youtube.com/watch?v=dQw4w9WgXcQ -> ID es dQw4w9WgXcQ
-        var videoSrc = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&showinfo=0"; 
-        videoIframe.attr('src', videoSrc);
-        $(this).hide(); // Hide play button
-        videoContainer.show(); // Show video iframe
-    });
-
-    // Ciclo video/imagen HERO
+    // Video del hero en loop
     const heroVideo = document.getElementById('hero-video');
-    const heroImage = document.getElementById('hero-image');
-    let heroCycleTimeout = null;
-    function showHeroImageThenVideo() {
-        heroVideo.style.display = 'none';
-        heroImage.style.display = 'block';
-        heroCycleTimeout = setTimeout(() => {
-            heroImage.style.display = 'none';
-            heroVideo.currentTime = 0;
-            heroVideo.style.display = 'block';
-            heroVideo.play();
-        }, 5000);
-    }
-    if (heroVideo && heroImage) {
-        heroVideo.addEventListener('ended', showHeroImageThenVideo);
+    if (heroVideo) {
+        heroVideo.loop = true;
         heroVideo.addEventListener('loadeddata', function() {
             heroVideo.play();
         });
     }
-    window.addEventListener('beforeunload', function() {
-        if (heroCycleTimeout) clearTimeout(heroCycleTimeout);
+
+    // Reviews carousel functionality
+    var currentReview = 0;
+    var reviews = [
+        { name: 'JEFF FRESHMAN', text: 'FOR US IT IS VERY IMPORTANT TO KNOW THE OPINIONS OF OUR CLIENTS' },
+        { name: 'MARIA GONZALEZ', text: 'EXCELLENT UNIVERSITY WITH THE BEST TEACHERS AND PROGRAMS' },
+        { name: 'CARLOS RODRIGUEZ', text: 'I LEARNED SO MUCH AND GOT THE BEST EDUCATION HERE' },
+        { name: 'LAURA MARTINEZ', text: 'THE EXPERIENCE WAS AMAZING, HIGHLY RECOMMENDED' }
+    ];
+
+    function updateReview(index) {
+        $('.review-name-button').text(reviews[index].name);
+        $('#reviews .card-title').text(reviews[index].text);
+        $('.dots .dot').removeClass('active');
+        $('.dots .dot').eq(index).addClass('active');
+    }
+
+    // Click en dots para cambiar review
+    $('.dots .dot').on('click', function() {
+        currentReview = $(this).index();
+        updateReview(currentReview);
     });
+
+    // Auto-rotate reviews cada 5 segundos
+    setInterval(function() {
+        currentReview = (currentReview + 1) % reviews.length;
+        updateReview(currentReview);
+    }, 5000);
 
     // Video de opinión en reviews
     $('.play-review-video').on('click', function() {
@@ -62,42 +69,65 @@ $(document).ready(function() {
         var video = videoContainer.find('video')[0];
         $(this).hide();
         videoContainer.show();
-        video.currentTime = 0;
-        video.play();
+        if (video) {
+            video.currentTime = 0;
+            video.play();
+        }
     });
 
-    // Carousel for Team section (adjust for mobile view)
-    $('#teamCarousel').carousel({
-        interval: false // Disable auto-play
-    });
+    // Team Carousel - configuración mejorada
+    var teamCurrentSlide = 0;
+    var totalTeamMembers = $('.team-card-wrapper').length;
 
-    // Handle carousel for mobile view (1 item) vs PC view (4 items)
-    function adjustTeamCarousel() {
-        if ($(window).width() <= 768) {
-            // For mobile, ensure only one item is visible
-            $('.team-card-wrapper').each(function(index) {
-                if (index > 0) {
-                    $(this).hide();
-                } else {
-                    $(this).show(); // Ensure the first one is shown
-                }
-            });
-            // Show only the active carousel item for mobile
-            $('#teamCarousel .carousel-item').removeClass('active');
-            $('#teamCarousel .carousel-item:first-child').addClass('active');
+    function isMobile() {
+        return $(window).width() <= 768;
+    }
 
+    function updateTeamCarousel() {
+        if (isMobile()) {
+            // En móvil, mostrar uno a la vez con transición
+            $('.team-card-wrapper').hide();
+            $('.team-card-wrapper').eq(teamCurrentSlide).fadeIn(300);
         } else {
-            // For PC, show all 4 items
+            // En desktop, mostrar todos
             $('.team-card-wrapper').show();
         }
     }
 
-    // Call on load and resize
-    adjustTeamCarousel();
-    $(window).on('resize', adjustTeamCarousel);
+    // Controles del carrusel de team
+    $('#teamCarousel .carousel-control-prev').on('click', function(e) {
+        e.preventDefault();
+        if (isMobile()) {
+            teamCurrentSlide = (teamCurrentSlide - 1 + totalTeamMembers) % totalTeamMembers;
+            updateTeamCarousel();
+        }
+    });
+
+    $('#teamCarousel .carousel-control-next').on('click', function(e) {
+        e.preventDefault();
+        if (isMobile()) {
+            teamCurrentSlide = (teamCurrentSlide + 1) % totalTeamMembers;
+            updateTeamCarousel();
+        }
+    });
+
+    // Auto-rotate team carousel en móvil cada 4 segundos
+    setInterval(function() {
+        if (isMobile()) {
+            teamCurrentSlide = (teamCurrentSlide + 1) % totalTeamMembers;
+            updateTeamCarousel();
+        }
+    }, 4000);
+
+    // Inicializar carrusel de team
+    updateTeamCarousel();
+    $(window).on('resize', function() {
+        updateTeamCarousel();
+    });
 
     // Initial load state for header
     if ($(window).scrollTop() > 50) {
         $('#main-header').addClass('scrolled');
+        $('.top-header').addClass('scrolled');
     }
 });

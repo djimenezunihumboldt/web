@@ -46,10 +46,24 @@ body {
 }
 
 .top-header {
-    background-color: white; /* Initial background */
-    color: #0d3d56; /* Initial text color */
+    background-color: #0d3d56; /* Initial background */
+    color: white; /* Initial text color */
     font-size: 0.9em;
     padding: 5px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-header.scrolled {
+    background-color: white !important;
+    color: #0d3d56 !important;
+}
+
+.top-header.scrolled a {
+    color: #0d3d56 !important;
+}
+
+.top-header.scrolled i {
+    color: #0d3d56 !important;
 }
 
 #main-navbar {
@@ -449,45 +463,54 @@ body {
 }
 
 /* Reviews Section */
+#reviews {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
 #reviews .review-card {
     border-radius: 20px;
     overflow: hidden;
-    min-height: 400px;
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Asegurar posicionamiento del overlay */
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
 }
 
-#reviews .review-card::before { /* Overlay semi-transparente */
+#reviews .review-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(13, 61, 86, 0.55); /* Color del footer con transparencia */
-    border-radius: 20px; /* Coincide con el radio de la tarjeta */
+    background-color: rgba(13, 61, 86, 0.65);
+    border-radius: 20px;
 }
 
 #reviews .card-img-overlay {
-    position: relative; /* Para que el contenido esté sobre el overlay */
+    position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px; /* Aumentar padding para mejor espaciado */
+    padding: 50px 40px;
 }
 
 #reviews .card-title {
-    font-family: 'Montserrat', sans-serif; /* Asumiendo esta fuente */
-    font-size: 2.2em; /* Tamaño de fuente más grande */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
     font-weight: bold;
     color: white;
     text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    margin-bottom: 25px; /* Espacio debajo del título */
-    line-height: 1.3;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    max-width: 90%;
+    transition: opacity 0.3s ease;
 }
 
 #reviews .play-button {
@@ -676,31 +699,121 @@ footer .col-12 text-center {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .hero-content .col-md-6 {
-        text-align: center !important; /* Center text in mobile view */
+    /* Hero section mobile fixes */
+    #hero {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 140px;
+        padding-bottom: 40px;
     }
 
+    .hero-content {
+        max-width: 95% !important;
+        margin-left: 2.5% !important;
+        padding-top: 20px !important;
+    }
+
+    .hero-content .row {
+        flex-direction: column;
+    }
+
+    .hero-content .col-md-6 {
+        text-align: center !important;
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em !important;
+        margin-top: 1rem;
+    }
+
+    .hero-content p.lead {
+        font-size: 1.1em !important;
+    }
+
+    #hero .lead::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .register-form {
+        width: 95% !important;
+        margin: 30px auto 0 auto !important;
+        padding: 20px !important;
+    }
+
+    /* Mobile menu fixes */
+    .navbar-collapse {
+        background-color: #0d3d56;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-toggler {
+        border-color: rgba(255,255,255,0.5);
+    }
+
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255,193,7,0.5);
+    }
+
+    /* About Us mobile */
     #about-us .col-md-6:first-child {
-        order: 2; /* Text after image in mobile for About Us */
+        order: 2;
     }
 
     #about-us .col-md-6:last-child {
-        order: 1; /* Image first in mobile for About Us */
+        order: 1;
     }
 
     #about-us .btn {
-        margin-top: 20px; /* Add margin to button */
+        margin-top: 20px;
     }
 
+    #about-us .about-image-wrapper {
+        margin-bottom: 30px;
+    }
+
+    /* Beneficios mobile */
     #beneficios .col-6 {
         flex: 0 0 50%;
         max-width: 50%;
     }
 
+    /* Study Careers - todas las cards igual tamaño */
     #study-careers .career-card {
-        height: auto !important; /* All cards same size in mobile */
+        height: 180px !important;
+        max-width: 100% !important;
+        min-width: auto !important;
+        margin-bottom: 15px !important;
     }
 
+    #study-careers .career-vertical,
+    #study-careers .career-horizontal {
+        height: 180px !important;
+        max-width: 100% !important;
+    }
+
+    #study-careers .col-md-4,
+    #study-careers .col-md-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Team carousel mobile */
     #teamCarousel .carousel-item .row > div {
         display: flex;
         justify-content: center;
@@ -712,19 +825,48 @@ footer .col-12 text-center {
         max-width: 100%;
     }
 
+    .team-card-wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    #teamCarousel .carousel-control-prev,
+    #teamCarousel .carousel-control-next {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(13, 61, 86, 0.7);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #teamCarousel .carousel-control-prev {
+        left: 5px;
+    }
+
+    #teamCarousel .carousel-control-next {
+        right: 5px;
+    }
+
     /* Reviews section adjustments */
     #reviews .card-img-overlay {
         padding: 20px;
     }
 
     #reviews .card-title {
-        font-size: 1.5em;
+        font-size: 1.3em !important;
+        line-height: 1.4;
     }
 
     #reviews .play-button {
         width: 60px;
         height: 60px;
         font-size: 2em;
+    }
+
+    #reviews .review-name-button {
+        padding: 10px 25px !important;
+        font-size: 0.9em !important;
     }
 
     /* Footer Responsive */
@@ -753,5 +895,29 @@ footer .col-12 text-center {
     footer .input-group {
         width: 90%;
         margin: auto;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 1.5em !important;
+    }
+
+    .register-form {
+        padding: 15px !important;
+    }
+
+    #study-careers .career-card {
+        height: 150px !important;
+    }
+
+    .career-title {
+        font-size: 1.2rem !important;
+    }
+
+    .career-btn {
+        padding: 8px 25px !important;
+        font-size: 0.9rem !important;
     }
 }
