@@ -67,3 +67,39 @@
         font-size: 1rem;
     }
 }
+
+/* Extra small phones */
+@media (max-width: 400px) {
+    .circle-icon {
+        width: 75px !important;
+        height: 75px !important;
+        border-width: 3px !important;
+    }
+    .circle-icon img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    #beneficios h4 {
+        font-size: 0.85rem;
+        margin-top: 12px;
+    }
+    #beneficios .col-6 {
+        padding: 5px !important;
+    }
+}
+
+/* Very small phones (iPhone SE, etc) */
+@media (max-width: 320px) {
+    .circle-icon {
+        width: 65px !important;
+        height: 65px !important;
+    }
+    .circle-icon img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    #beneficios h4 {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+}

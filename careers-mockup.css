@@ -190,6 +190,43 @@
   .career-card .career-title {
     font-size: 1.2rem;
   }
+
+  /* Forzar todas las cards a mismo tamaño */
+  .career-vertical,
+  .career-horizontal {
+    height: 160px !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .career-bg-admin .career-content,
+  .career-bg-accounting .career-content {
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  .career-bg-admin .career-title,
+  .career-bg-accounting .career-title {
+    text-align: center !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+  .career-card .career-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .career-btn {
+    padding: 6px 20px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .career-vertical,
+  .career-horizontal {
+    height: 130px !important;
+  }
 }
 
 /* Estilo para el título Our Team */

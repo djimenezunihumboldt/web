@@ -921,3 +921,312 @@ footer .col-12 text-center {
         font-size: 0.9rem !important;
     }
 }
+
+/* iPhone SE, iPhone 5/5S (320px) */
+@media (max-width: 320px) {
+    #hero {
+        padding-top: 120px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.2em !important;
+        line-height: 1.3;
+    }
+
+    .hero-content p.lead {
+        font-size: 0.95em !important;
+    }
+
+    .register-form {
+        padding: 12px !important;
+    }
+
+    .register-form h4 {
+        font-size: 1.1rem;
+    }
+
+    .register-form .form-control {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .register-form .btn {
+        font-size: 0.85rem;
+        padding: 8px 20px;
+    }
+
+    /* Courses cards */
+    #courses .card-title {
+        font-size: 0.9rem;
+    }
+
+    #courses .btn {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+
+    /* About Us */
+    #about-us h2 {
+        font-size: 1.3rem;
+    }
+
+    #about-us h3 {
+        font-size: 1.1rem;
+    }
+
+    #about-us p {
+        font-size: 0.9rem;
+    }
+
+    /* Beneficios icons */
+    .circle-icon {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .circle-icon img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    #beneficios h4 {
+        font-size: 0.9rem !important;
+    }
+
+    /* Careers */
+    #study-careers .career-card {
+        height: 120px !important;
+    }
+
+    .career-title {
+        font-size: 1rem !important;
+    }
+
+    .career-btn {
+        padding: 6px 18px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Team */
+    .team-card-wrapper {
+        max-width: 260px;
+    }
+
+    .team-card .card-title {
+        font-size: 1rem;
+    }
+
+    .team-card .btn {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+
+    /* Reviews */
+    #reviews .card-title {
+        font-size: 1rem !important;
+    }
+
+    #reviews .review-name-button {
+        font-size: 0.75rem !important;
+        padding: 8px 15px !important;
+    }
+
+    .dots .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 0 !important;
+    }
+
+    footer .footer-title {
+        font-size: 1.1em;
+    }
+
+    footer p, footer li {
+        font-size: 0.85rem;
+    }
+
+    footer .footer-social a {
+        font-size: 1.2em;
+    }
+}
+
+/* iPhone 6/7/8, iPhone X (375px) */
+@media (min-width: 321px) and (max-width: 375px) {
+    .hero-content h1 {
+        font-size: 1.4em !important;
+    }
+
+    .register-form {
+        padding: 15px !important;
+    }
+
+    .circle-icon {
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    .circle-icon img {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    #beneficios h4 {
+        font-size: 1rem !important;
+    }
+
+    #study-careers .career-card {
+        height: 140px !important;
+    }
+
+    .career-title {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* iPhone 6/7/8 Plus, iPhone XR/XS Max (414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+    .hero-content h1 {
+        font-size: 1.5em !important;
+    }
+
+    .circle-icon {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .circle-icon img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    #study-careers .career-card {
+        height: 150px !important;
+    }
+}
+
+/* Small tablets (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    #hero {
+        padding-top: 130px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.7em !important;
+    }
+
+    .register-form {
+        width: 85% !important;
+    }
+
+    #study-careers .career-card {
+        height: 160px !important;
+    }
+
+    .team-card-wrapper {
+        max-width: 320px;
+    }
+}
+
+/* Tablets portrait (601px - 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    #hero {
+        padding-top: 140px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em !important;
+    }
+
+    .register-form {
+        width: 70% !important;
+    }
+
+    /* 2 columns for courses */
+    #courses .col-lg-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* 2 columns for beneficios */
+    #beneficios .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .circle-icon {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .circle-icon img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    /* Team 2 columns */
+    #teamCarousel .carousel-item .col-lg-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .team-card-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* Landscape mode for phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    #hero {
+        min-height: auto;
+        padding: 100px 0 30px 0;
+    }
+
+    .hero-content .row {
+        flex-direction: row !important;
+    }
+
+    .hero-content .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.3em !important;
+    }
+
+    .register-form {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* Fix for touch devices - better tap targets */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .nav-link {
+        padding: 12px 15px !important;
+    }
+
+    .dots .dot {
+        min-width: 12px;
+        min-height: 12px;
+        margin: 0 8px;
+    }
+
+    footer ul li {
+        margin-bottom: 15px;
+    }
+
+    footer ul li a {
+        display: inline-block;
+        padding: 5px 0;
+    }
+}
